@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Shoppe Customer details
+    </title>
+    <style>
+        table,th,td{
+            border:1px solid black;
+        }
+    </style>
+    <body>
+        <table style="width:70%">
+            <thead>
+            <tr bgcolor="blue">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Sell</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for x in customers %} 
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.name}}</td>
+                    <td>{{ x.email }}</td>
+                    <td style="text-align:center"><button><a href="{% url 'productapiview' %}">add product</button></a></td>
+                </tr>
+                {% endfor %}
+                <tr><button><a href="{% url 'customerapiview' %}">Add</a></button></tr>
+                <tr><button><a href="{% url 'products' %}">Products</a></button></tr>
+            </tbody>
+        </table>
+    </body>
+</html>

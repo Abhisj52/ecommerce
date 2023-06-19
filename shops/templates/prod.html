@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Product Details
+    </title>
+    <style>
+        table,th,td{
+            border:1px solid black;
+        }
+    </style>
+    <body>
+        <table style="width:80%">
+            <thead>
+            <tr bgcolor="yellow">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Seller</th>
+                <th>Date</th>
+                <th>Active</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for y in productss %} 
+                <tr>
+                    <td>{{ y.id }}</td>
+                    <td>{{ y.name}}</td>
+                    <td>{{ y.descp }}</td>
+                    <td>{{ y.price }}</td>
+                    <td>{{ y.seller }}</td>
+                    <td>{{ y.date }}</td>
+                    <td>{{ y.product_active }}</td>
+                </tr>
+                {% endfor %}
+               
+            </tbody>
+        </table>
+    </body>
+</html>
